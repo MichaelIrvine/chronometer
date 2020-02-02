@@ -6,7 +6,9 @@ class Timer extends React.Component {
   state = {
     timerOn: false,
     timerStart: 0,
-    timerTime: 0
+    timerTime: 0,
+    timerEnd: false,
+    disableButtons: false
   };
 
   startTimer = () => {
@@ -24,8 +26,8 @@ class Timer extends React.Component {
       } else {
         clearInterval(this.timer);
         this.setState({ timerOn: false });
-        // Turn this into a more interesting 'ending' event
-        alert("Countdown ended");
+        this.setState( {timerEnd: true });
+        this.setState({ disableButtons: true })
       }
     }, 10);
   };
@@ -37,7 +39,10 @@ class Timer extends React.Component {
   resetTimer = () => {
     if (this.state.timerOn === false) {
       this.setState({
-        timerTime: this.state.timerStart
+        timerStart: 0,
+        timerTime: 0,
+        timerEnd: false,
+        disableButtons: false
       });
     }
   };
@@ -79,29 +84,29 @@ class Timer extends React.Component {
             <span>Seconds</span>
           </div>
           <div className="timer__increment-buttons">
-            <button onClick={() => this.adjustTimer("incHours")}>
+            <button onClick={() => this.adjustTimer("incHours")} className={`${this.state.disableButtons ? 'hidden' : 'visible'}`}>
               <img className="timer__icon plus" src={PlusIcon} />
             </button>
-            <button onClick={() => this.adjustTimer("incMinutes")}>
+            <button onClick={() => this.adjustTimer("incMinutes")} className={`${this.state.disableButtons ? 'hidden' : 'visible'}`}>
               <img className="timer__icon plus" src={PlusIcon} />
             </button>
-            <button onClick={() => this.adjustTimer("incSeconds")}>
+            <button onClick={() => this.adjustTimer("incSeconds")} className={`${this.state.disableButtons ? 'hidden' : 'visible'}`}>
               <img className="timer__icon plus" src={PlusIcon} />
             </button>
           </div>
           <div className="timer__numbers-container">
-            <span className="timer__numbers">
+            <span className={`timer__numbers ${this.state.timerEnd ? "finished" : ''}`}>
               {hours} : {minutes} : {seconds}
             </span>
           </div>
           <div className="timer__decrement-buttons">
-            <button onClick={() => this.adjustTimer("decHours")}>
+            <button onClick={() => this.adjustTimer("decHours")} className={`${this.state.disableButtons ? 'hidden' : 'visible'}`}>
               <img className="timer__icon minus" src={MinusIcon} />
             </button>
-            <button onClick={() => this.adjustTimer("decMinutes")}>
+            <button onClick={() => this.adjustTimer("decMinutes")} className={`${this.state.disableButtons ? 'hidden' : 'visible'}`}>
               <img className="timer__icon minus" src={MinusIcon} />
             </button>
-            <button onClick={() => this.adjustTimer("decSeconds")}>
+            <button onClick={() => this.adjustTimer("decSeconds")} className={`${this.state.disableButtons ? 'hidden' : 'visible'}`}>
               <img className="timer__icon minus" src={MinusIcon} />
             </button>
           </div>

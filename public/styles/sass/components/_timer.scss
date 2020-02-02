@@ -15,6 +15,8 @@
     }
   }
 
+
+
   .timer__increment-buttons {
     display: flex;
     justify-content: space-between;
@@ -46,4 +48,13 @@
   #timer__button-resume {
     border-right: 1px solid #adadad;
   }
+}
+
+// Visibility controls for increment/decrement buttons
+.timer__increment-buttons button.hidden {
+  display: none;
+}
+
+.timer__decrement-buttons button.hidden {
+  display: none;
 }
