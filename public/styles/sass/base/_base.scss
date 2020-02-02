@@ -1,0 +1,17 @@
+@import 'typography';
+
+body {
+  background-color: #000000;
+  background: radial-gradient(circle, rgba(0,0,0,1) 41%, rgb(40, 40, 40) 100%);
+}
+
+.app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+// Color Variables
+$lightGrey: #adadad;

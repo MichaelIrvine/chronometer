@@ -1,0 +1,19 @@
+.stopwatch {
+  .stopwatch__display {
+    flex: 1;
+    display: flex;
+    align-items: center;
+  }
+
+  .stopwatch__controls {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid #adadad;
+
+    button {
+      width: 100%;
+      padding: 1.2rem;
+    }
+  }
+}

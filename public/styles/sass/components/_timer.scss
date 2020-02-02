@@ -1,0 +1,49 @@
+.timer__display {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 2em;
+
+  .timer__label {
+    display: flex;
+    justify-content: center;
+    padding: 1em 0;
+
+    span {
+      padding: 0 0.5rem;
+    }
+  }
+
+  .timer__increment-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .timer__decrement-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .timer__icon {
+    height: 35px;
+  }
+}
+
+.timer__controls {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid #adadad;
+
+  button {
+    width: 100%;
+    padding: 1.2rem;
+
+
+  }
+
+  #timer__button-resume {
+    border-right: 1px solid #adadad;
+  }
+}

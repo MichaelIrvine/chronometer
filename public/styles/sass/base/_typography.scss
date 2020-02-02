@@ -1,0 +1,72 @@
+// Base Font
+html {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+// Font Family Variables
+$font__main: 'neue-haas-grotesk-display';
+$font__numbers: 'sys-tt';
+
+// Font Weights
+$fw300: 300;
+$fw400: 400;
+
+// Font Colors
+$font__main--color: #fff;
+
+// Font Sizes
+h1 {
+  font-size: 48px;
+  font-family: $font__main;
+}
+h2 {
+  font-size: 40px;
+  font-family: $font__main;
+}
+h3 {
+  font-size: 40px;
+  font-family: $font__main;
+}
+p {
+ font-size: 40px;
+ font-family: $font__main;
+}
+span {
+  font-size: 40px;
+  font-family: $font__main;
+ }
+
+ span.timer__numbers {
+  font-family: $font__numbers;
+  font-style: italic;
+  font-size: 80px;
+  font-weight: $fw300;
+}
+
+span.stopwatch__numbers {
+  font-family: $font__numbers;
+  font-style: italic;
+  font-size: 72px;
+  font-weight: $fw300;
+}
+
+ span.timer__controls-button {
+  font-size: 40px; 
+  font-family: $font__main;
+  padding: 1rem;
+ }
+
+ .timer__label span{
+   font-size: 24px;
+ }
+
+h1,
+h2,
+h3,
+p,
+span {
+  color: $font__main--color;
+  font-weight: $fw300;
+  text-transform: uppercase;
+}
+
