@@ -48,22 +48,22 @@ class Stopwatch extends React.Component {
         </div>
         <div className="stopwatch__controls">
           {this.state.timerOn === false && this.state.timerTime === 0 && (
-            <button onClick={this.startTimer}>
+            <button id="stopwatch__button-start" onClick={this.startTimer}>
               <span>Start</span>
             </button>
           )}
           {this.state.timerOn === true && (
-            <button onClick={this.stopTimer}>
+            <button id="stopwatch__button-stop" onClick={this.stopTimer}>
               <span>Stop</span>
             </button>
           )}
           {this.state.timerOn === false && this.state.timerTime > 0 && (
-            <button onClick={this.startTimer}>
+            <button id="stopwatch__button-resume" onClick={this.startTimer}>
               <span>Resume</span>
             </button>
           )}
           {this.state.timerOn === false && this.state.timerTime > 0 && (
-            <button onClick={this.resetTimer}>
+            <button id="stopwatch__button-restart" onClick={this.resetTimer}>
               <span>Reset</span>
             </button>
           )}
